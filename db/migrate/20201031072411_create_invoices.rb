@@ -9,6 +9,7 @@ class CreateInvoices < ActiveRecord::Migration[6.0]
       t.date :posting_date, null: false
       t.integer :amount, null: false
       t.references :vendor, null: false, foreign_key: true
+      t.index :document_number, unique: true
 
       t.timestamps
     end
