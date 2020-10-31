@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_072411) do
     t.integer "vendor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["document_number"], name: "index_invoices_on_document_number", unique: true
     t.index ["vendor_id"], name: "index_invoices_on_vendor_id"
   end
 
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_072411) do
     t.string "category", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_vendors_on_code", unique: true
   end
 
   add_foreign_key "invoices", "vendors"
