@@ -1,0 +1,13 @@
+<h2>Summary</h2>
+<h4>No of invoices uploaded: </h4>
+<%= @summary_data["invoice_uploaded"] %>
+<h4>No of Vendors uploaded: </h4>
+<%= @summary_data["vendor_uploaded"] %>
+<h4>No of invalid invoices: </h4>
+<%= @summary_data["invalid_invoices"] %>
+<h4>Total amount of money: </h4>
+<%= @summary_data["amount"] %><br />
+
+<%= link_to 'back', root_path %>
+
+
