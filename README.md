@@ -25,3 +25,4 @@ Things you may want to cover:
 I have used Rails6 , ruby version 2.5.3, postgres as backend database.
 There are two models vendors and invoces
 I have used roo gem to uploade and read file.
+clone this git repository and run rails s on terminal to run server and then http://localhost:3000 on your browser to run localy. 
