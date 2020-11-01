@@ -1,1 +1,39 @@
-gkjsgkskgjsgk
+
+<p id="notice"><%= notice %></p>
+
+<h1>Items</h1>
+
+<%= form_for import_invoices_path, multipart: true  do |f|%>
+  <%= f.file_field :file %>
+  <%= f.submit "Import File" %>
+<% end %>
+
+<table>
+    <tr>
+      <th>Invoice Number</th>
+      <th>Document Number</th>
+      <th>Document Type</th>
+      <th>Due Date</th>
+      <th>Document Date</th>
+      <th>Posting Date</th>
+      <th>Amount</th>
+      <th>Vendor Name</th>
+      <th>Vendor Code</th>
+      <th>Vendor Type</th>
+    </tr>
+    <% @invoices.all.each do |invoice| %>
+      <tr>
+        <td><%= invoice.invoice_number %></td>
+        <td><%= invoice.document_number %></td>
+        <td><%= invoice.document_type %></td>
+        <td><%= invoice.due_date %></td>
+        <td><%= invoice.document_date %></td>
+        <td><%= invoice.posting_date %></td>
+        <td><%= invoice.amount %></td>  
+        <td><%= invoice.vendor.name %></td>
+        <td><%= invoice.vendor.code %></td>
+        <td><%= invoice.vendor.vendor_type %></td>
+    <% end %>
+</table>
+
+<br>
