@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_10_31_072411) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "invoices", force: :cascade do |t|
     t.integer "invoice_number", null: false
     t.integer "document_number", null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_072411) do
     t.date "document_date", null: false
     t.date "posting_date", null: false
     t.float "amount", null: false
-    t.integer "vendor_id", null: false
+    t.bigint "vendor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["invoice_number"], name: "index_invoices_on_invoice_number", unique: true
