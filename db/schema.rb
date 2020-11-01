@@ -13,24 +13,24 @@
 ActiveRecord::Schema.define(version: 2020_10_31_072411) do
 
   create_table "invoices", force: :cascade do |t|
-    t.integer "number", null: false
+    t.integer "invoice_number", null: false
     t.integer "document_number", null: false
     t.string "document_type", null: false
     t.date "due_date", null: false
     t.date "document_date", null: false
     t.date "posting_date", null: false
-    t.integer "amount", null: false
+    t.float "amount", null: false
     t.integer "vendor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["document_number"], name: "index_invoices_on_document_number", unique: true
+    t.index ["invoice_number"], name: "index_invoices_on_invoice_number", unique: true
     t.index ["vendor_id"], name: "index_invoices_on_vendor_id"
   end
 
   create_table "vendors", force: :cascade do |t|
     t.string "code", null: false
     t.string "name", null: false
-    t.string "category", null: false
+    t.string "vendor_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_vendors_on_code", unique: true
