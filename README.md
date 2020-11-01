@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+I have used Rails6 , ruby version 2.5.3, postgres as backend database.
+There are two models vendors and invoces
+I have used roo gem to uploade and read file.
