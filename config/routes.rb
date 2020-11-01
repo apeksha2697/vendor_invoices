@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'invoices/index'
+  get 'invoices/summary'
 
-  resources :vendors
+  resources :invoices do
+    collection {post :import}
+  end
 
-  root 'invoices#index'
+  resources :vendors 
+  root to: 'invoices#index'
 end
