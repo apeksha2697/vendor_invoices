@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :invoice do
-    invoice_number { Faker::Number.unique.number  }
-    document_number {Faker::Number.number}
+    invoice_number { rand(1..100) }
+    document_number {rand(1..100)}
     document_type {random = ['RE','RT','KG','KD','ZA'].sample}
     due_date {Date.today}
     document_date {Date.today}
